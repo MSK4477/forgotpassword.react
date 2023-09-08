@@ -48,6 +48,7 @@ function ResetPassword() {
         <label>New Password:</label>
         <input
           type="password"
+          minLength={8}
           placeholder="New password"
           value={newPassword}
           onChange={handleNewPasswordChange}
@@ -58,6 +59,7 @@ function ResetPassword() {
         <label>Confirm Password:</label>
         <input
           type="password"
+          minLength={8}
           placeholder="Confirm password"
           value={confirmPassword}
           onChange={handleConfirmPasswordChange}

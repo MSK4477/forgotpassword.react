@@ -20,14 +20,8 @@ const [mailSent, setMailSent] = useState(true);
        if (response.data.code === 0) {
       console.log(response.data);
       alert("The given email address is not found.");
+      return;
     }
-    
-   else {
-    // Handle other cases or errors.
-    console.log('Unexpected response:', response.data);
-  }
-  
-
   };
 
   return (
