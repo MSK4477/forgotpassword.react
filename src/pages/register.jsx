@@ -2,6 +2,7 @@
 import React, { useState } from 'react';
 import { useNavigate, Link} from 'react-router-dom';
 import axios from "axios"
+import backEndUrl from "../config.js"
 
 const Register = () => {
   const navigate = useNavigate();
@@ -24,7 +25,7 @@ const initialStage = {
     e.preventDefault();
   
     try {
-      const res = await axios.post("http://localhost:3000/api/users/register", formData);
+      const res = await axios.post(`${backEndUrl}/register`, formData);
   
       if (res.status === 200) {
         navigate("/home");

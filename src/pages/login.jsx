@@ -2,6 +2,7 @@
 import React, { useState } from "react";
 import { Navigate, useNavigate, Link } from "react-router-dom";
 import axios from "axios";
+import backEndUrl from "../config.js";
 
 const Login = () => {
   const navigate = useNavigate();
@@ -24,14 +25,14 @@ const Login = () => {
     e.preventDefault();
 
     axios
-      .post("http://localhost:3000/api/users/login", formData)
+      .post(`${backEndUrl}/login`, formData)
       .then((res) => {
         if (res.status === 200) {
           alert("user Loggedin successfully");
           navigate("/home");
           localStorage.setItem("user", JSON.stringify(formData.email));
         }
-        
+
         if (
           localStorage.getItem("user") &&
           JSON.parse(localStorage.getItem("user"))
@@ -40,13 +41,12 @@ const Login = () => {
         }
       })
       .catch((err) => {
-if(err){
-  alert("incorrect password or email")
-}
+        if (err) {
+          alert("incorrect password or email");
+        }
+      });
 
-      })
-
-    setFormData(initialStage)
+    setFormData(initialStage);
   };
 
   return (

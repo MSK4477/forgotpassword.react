@@ -1,5 +1,6 @@
 import  { useState } from 'react';
 import axios from "axios"
+import backEndUrl from "../config.js"
 function ForgotPassword() {
   const [email, setEmail] = useState('');
 const [mailSent, setMailSent] = useState(true);
@@ -9,7 +10,7 @@ const [mailSent, setMailSent] = useState(true);
 
   const handleSubmit = async(e) => {
     e.preventDefault();
-   const response = await axios.post("http://localhost:3000/api/users/forgotPassword", {email}) 
+   const response = await axios.post(`${backEndUrl}/forgotPassword`, {email}) 
   
    if (response.data.message === 'Email sent successfully.') {
     console.log(response.data);
