@@ -22,7 +22,7 @@ const logout = () =>{
       <div style={{color:"white", textAlign:"center", position:"relative", top:"50%", }}  className='homeText'>Welcome To Home Page </div>
       <button  style=
       {{  position:"absolute",
-      left:"1100px",
+      left:"1135px",
       padding:"14px",
       backgroundColor:"#0d55f1",
       color:"#ffffff",
