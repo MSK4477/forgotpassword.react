@@ -41,8 +41,10 @@ const Login = () => {
         }
       }
       catch(err) {
-      
+        if (res.data.code === 0) {
+
           alert("incorrect password or email");
+        }
       }
 
     setFormData(initialStage);
