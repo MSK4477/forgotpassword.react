@@ -21,12 +21,12 @@ const Login = () => {
     });
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async(e) => {
     e.preventDefault();
 
-    axios
-      .post(`${backEndUrl}/login`, formData)
-      .then((res) => {
+    const res = await axios.post(`${backEndUrl}/login`, formData)
+      
+      try {
         if (res.status === 200) {
           alert("user Loggedin successfully");
           navigate("/home");
@@ -39,12 +39,11 @@ const Login = () => {
         ) {
           return <Navigate to={"/home"} replace />;
         }
-      })
-      .catch((err) => {
-        if (err) {
+      }
+      catch(err) {
+      
           alert("incorrect password or email");
-        }
-      });
+      }
 
     setFormData(initialStage);
   };
@@ -59,6 +58,7 @@ const Login = () => {
           <br />
           <input
             type="email"
+           
             id="email"
             name="email"
             placeholder="Enter email address"

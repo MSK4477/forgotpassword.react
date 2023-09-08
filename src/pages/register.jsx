@@ -50,6 +50,7 @@ const initialStage = {
           <input
             type="text"
             id="name"
+            minLength={5}
             name="name"
             value={formData.name}
             onChange={handleChange}
@@ -71,6 +72,7 @@ const initialStage = {
           <label htmlFor="password">Password</label>
           <input
             type="password"
+            minLength={8}
             id="password"
             name="password"
             value={formData.password}

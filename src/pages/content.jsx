@@ -19,16 +19,25 @@ const logout = () =>{
 }
   return (
     <div ref={elementRef} style={{ opacity: 0 }} className='content'>
-      <div style={{color:"white", textAlign:"center", position:"relative", top:"50%", }}  className='homeText'>Welcome To Home Page </div>
+      <div
+       style=
+       {{
+        color:"white",
+        textAlign:"center", 
+        position:"relative",
+         top:"50%",
+         fontSize:"2em",
+}}  className='homeText'>Welcome To Home Page </div>
       <button  style=
       {{  position:"absolute",
-      left:"1135px",
+      right:"0",
       padding:"14px",
       backgroundColor:"#0d55f1",
       color:"#ffffff",
       borderStyle:"none",
       borderRadius:"4px",
-      cursor:"pointer"
+      cursor:"pointer",
+      marginRight:"30px",
     }} onClick={logout}>Logout</button>
     </div>
   );
