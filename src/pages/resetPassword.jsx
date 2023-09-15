@@ -33,7 +33,7 @@ function ResetPassword() {
       });
 
       if (response.data.Status === "Success") {
-        alert("password reseted successfully");
+        alert("password reset successfully.");
         navigate("/login");
       }
     } catch (error) {
